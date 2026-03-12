@@ -3,17 +3,17 @@
 Computer vision prototype for automated fashion item classification into 8 retail categories using PyTorch and Google Colab.
 
 ## Executive Summary
-This project is an applied computer vision prototype built to classify fashion images into 8 retail product categories. The goal was to evaluate whether machine learning could support automated product tagging and improve downstream merchandising intelligence in a retail setting.
+This project is an applied computer vision prototype built to classify fashion images into 8 retail product categories. The objective was to evaluate whether machine learning could support automated product tagging and improve downstream merchandising intelligence in a retail setting.
 
-The project compares multiple model approaches:
+Three model approaches were explored:
 - Multilayer Perceptron (MLP)
 - VGG16 implemented from scratch
-- Pretrained VGG16
+- Pre-trained VGG16
 
-The work includes dataset preparation, custom test data loading, image preprocessing, hyperparameter tuning, TensorBoard experiment tracking, and performance evaluation using validation accuracy, confusion matrices, and mean average precision (mAP).
+The project included dataset preparation, custom test data loading, image preprocessing, hyperparameter tuning, TensorBoard experiment tracking, and performance evaluation using validation accuracy, confusion matrices, and mean average precision (mAP).
 
 ## Business Problem
-Fashion retailers and digital commerce teams often rely on manual catalog tagging, which is time-consuming and inconsistent. A scalable image classification system can help automate product categorisation, support trend visibility, and improve recommendation systems such as “Complete the Look.”
+Fashion retailers and digital commerce teams often rely on manual catalog tagging, which is time-consuming and inconsistent. A scalable image classification workflow can help automate product categorisation, support trend visibility, and improve recommendation workflows such as “Complete the Look.”
 
 ## Role & Scope
 This project was executed end-to-end as an individual machine learning build. Scope included:
@@ -45,12 +45,40 @@ The model classifies images into 8 fashion categories:
 - Shorts
 - Tees
 
+## Results Overview
+The prototype progressed from a lightweight MLP baseline to stronger CNN-based performance, with the **pre-trained VGG16 model delivering the strongest results**. This suggests that transfer learning was more effective than both the MLP baseline and the from-scratch VGG16 approach for this fashion classification task.
+
+![Results Overview](images/Model%20Performance%20Final%20Results%20Pedestal.png)
+
+## Model Comparison
+Multiple architectures were compared to evaluate the trade-off between simplicity, feature extraction strength, and classification performance.
+
+### Accuracy Comparison
+![Accuracy Comparison Across Models](images/accuracy%20and%20comparison%20graph%20across%20all%203%20models%20TensorBoard.png)
+
+### Loss Comparison
+![Loss Comparison Across Models](images/Comparrison%20of%20model%20loss%20metrics.png)
+
+## Error Analysis
+Confusion matrices were used to understand class-level performance and identify where visually similar garments caused the greatest ambiguity.
+
+### MLP Baseline Confusion Matrix
+![MLP Confusion Matrix](images/MLP%20Confusion_Matrix_On_Validation_Set.png)
+
+### Pre-trained VGG16 Confusion Matrix
+![Pre-trained VGG16 Confusion Matrix](images/Pre-trained%20VGG16%20Confusion%20Matrix.png)
+
+## Winning Architecture
+The strongest-performing model was the pre-trained VGG16 architecture, highlighting the value of transfer learning for this dataset size and image classification problem.
+
+![Pre-trained VGG16 Architecture](images/Pre-trained%20VGG16%20Architecture.png)
+
 ## Results Summary
-- MLP baseline reached roughly 80% validation accuracy
-- Custom VGG16 improved validation accuracy to 89.27%
-- Best mAP reached approximately 0.831
-- Stronger performance was observed on visually distinct categories such as jeans, shoes, and shorts
-- More confusion remained between visually similar garment classes such as knitwear, shirts, and jackets
+- MLP established a lightweight baseline for comparison
+- Pre-trained VGG16 produced the strongest overall performance
+- The project demonstrated measurable gains from deeper feature extraction and transfer learning
+- Stronger performance was observed on more visually distinct categories such as jeans, shoes, and shorts
+- Higher confusion remained between visually similar upper-body garments such as knitwear, shirts, and jackets
 
 ## Product Relevance
 This prototype shows how computer vision can convert raw fashion imagery into structured product intelligence. In a retail environment, this could support:
@@ -61,14 +89,19 @@ This prototype shows how computer vision can convert raw fashion imagery into st
 - recommendation workflows such as “Complete the Look”
 
 ## Repository Contents
-- `notebooks/` — Colab notebook for the end-to-end project
-- `images/` — result visuals and screenshots
-- `README.md` — project overview and business framing
+- `notebooks/` — end-to-end Colab notebook
+- `images/` — evaluation charts, confusion matrices, and architecture visuals
+- `README.md` — project overview, results, and business framing
 
 ## Limitations
 - Prototype-scale dataset
 - Not production deployed
-- Classification ambiguity remains across visually similar upper-body garments
-- Further gains would likely come from stronger data quality, transfer learning, and broader evaluation
+- Classification ambiguity remains across visually similar garment classes
+- Further gains would likely come from stronger data quality, class balancing, broader evaluation, and additional transfer learning experiments
 
-
+## Next Steps
+- Rename image assets into cleaner repository-safe filenames
+- Add a short inference / demo section with sample predictions
+- Expand the dataset and improve class balance
+- Compare more modern transfer learning approaches
+- Explore integration into retail catalog tagging and merchandising analytics workflows
