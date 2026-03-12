@@ -1,4 +1,4 @@
-# Fashion Computer Vision Classification Prototype
+# Fashion Computer Vision Classification System
 
 Computer vision prototype for automated fashion item classification into 8 retail categories using PyTorch and Google Colab.
 
