@@ -48,7 +48,7 @@ The model classifies images into 8 fashion categories:
 ## Results Overview
 The prototype progressed from a lightweight MLP baseline to stronger CNN-based performance, with the **pre-trained VGG16 model delivering the strongest results**. This suggests that transfer learning was more effective than both the MLP baseline and the from-scratch VGG16 approach for this fashion classification task.
 
-![Results Overview](images/Model%20Performance%20Final%20Results%20Pedestal.png)
+![Results Overview](https://github.com/Korra1234/fashion-computer-vision-classification/blob/338c9977e47e21dae423f21fc5889af2de7ebd4c/images/Compariosn%20of%20Model%20Accuracies%20in%20Image%20Classification%20Tasks.png)
 
 ## Model Comparison
 Multiple architectures were compared to evaluate the trade-off between simplicity, feature extraction strength, and classification performance.
