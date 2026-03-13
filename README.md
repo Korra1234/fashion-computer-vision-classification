@@ -99,9 +99,3 @@ This prototype shows how computer vision can convert raw fashion imagery into st
 - Classification ambiguity remains across visually similar garment classes
 - Further gains would likely come from stronger data quality, class balancing, broader evaluation, and additional transfer learning experiments
 
-## Next Steps
-- Rename image assets into cleaner repository-safe filenames
-- Add a short inference / demo section with sample predictions
-- Expand the dataset and improve class balance
-- Compare more modern transfer learning approaches
-- Explore integration into retail catalog tagging and merchandising analytics workflows
